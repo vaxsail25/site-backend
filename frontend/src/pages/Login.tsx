@@ -1,4 +1,5 @@
 import React from "react";
+import LoginForm from "../components/LoginForm";
 
 const Login: React.FC = () => {
     const handleSubmit = async (e: React.FormEvent) => {
@@ -19,22 +20,7 @@ const Login: React.FC = () => {
     return (
         <main>
             <div className='container'>    
-                <div className="wrapper">
-                    <form className="main-form" onSubmit={handleSubmit}>
-                        <h2>Sing in</h2>
-                        <div className="input-box">
-                            <input id="input-username" name='user' type='text' placeholder="Username"></input>
-                        </div>
-                        <div className="input-box">
-                            <input id="input-password" name='password' type='password' placeholder="Password"></input>
-                        </div>
-                        <div className="remember">
-                            <label><input type="checkbox" />Remember me</label>
-                            <a href="#">Forgot password?</a>
-                        </div>
-                        <button type="submit" className="btn">Sing in</button>
-                    </form>
-                </div>
+                <LoginForm handleSubmit={handleSubmit} />
             </div>
         </main>
     );

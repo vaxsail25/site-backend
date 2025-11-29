@@ -1,4 +1,5 @@
 import React from "react";
+import RegisterForm from "../components/RegisterForm";
 import { useNavigate } from "react-router-dom";
 
 const Register: React.FC = () => {
@@ -28,22 +29,7 @@ const Register: React.FC = () => {
     return (
         <main>
             <div className='container'>
-                <div className="wrapper">
-                    <form className="main-form" onSubmit={handleSubmit}>
-                        <h2>Sign up</h2>
-                        <div className="input-box">
-                            <input id="input-username" name='user' type='text' placeholder="Username"></input>
-                        </div>
-                        <div className="input-box">
-                            <input id="input-password" name='password' type='password' placeholder="Password"></input>
-                        </div>
-                        <div className="remember">
-                            <label><input type="checkbox" />Remember me</label>
-                            <a href="#">Forgot password?</a>
-                        </div>
-                        <button type="submit" className="btn">Sing up</button>
-                    </form>
-                </div>
+                <RegisterForm handleSubmit={handleSubmit} />
             </div>
         </main>
     );
