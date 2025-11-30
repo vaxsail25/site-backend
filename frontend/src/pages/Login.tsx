@@ -1,7 +1,10 @@
 import React from "react";
 import LoginForm from "../components/LoginForm";
+import { useNavigate } from "react-router-dom";
 
 const Login: React.FC = () => {
+    const navigate = useNavigate();
+
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
     
@@ -15,7 +18,13 @@ const Login: React.FC = () => {
         });
 
         const data = await res.json();
+
+        if (data.success) {
+            navigate("/");
             console.log(data);
+        } else {
+            console.log(data);
+        }
     };
     return (
         <main>

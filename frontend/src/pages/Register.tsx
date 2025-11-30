@@ -20,7 +20,7 @@ const Register: React.FC = () => {
         const data = await res.json();
 
         if (data.success) {
-            navigate("/");
+            navigate("/auth/login");
             console.log(data);
         } else {
             console.log(data);
